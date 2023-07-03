@@ -3,6 +3,8 @@
 	require "../php/cdn.php";
 	require "../php/functions.php";
 	require "../php/sql.php";
+	require "../php/vars.php";
+	require "../php/menu.php";
 
 ?>
 
@@ -96,55 +98,6 @@
 			</center>
 		</div>
 	</div>
-<div id="menu" class="menu">
-	<div class="menuContent">
-		<div class="row">
-			<div class="col-6">
-				<h1 class="logoWhite align">mukifu.</h1>
-			</div>
-			<div id="closeIcon" style="text-align: right;" class="col-6">
-				<i style="padding: 0px !important;" class="fa-solid fa-xmark menuIcon align"></i>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="social">
-					<div class="row">
-						<div class="col-4">
-							<div style="background: url('../assets/img/no-picture.png');" class="pp align"></div>
-						</div>
-						<div class="col-8">
-							<label class="align">@gustavo</label>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<hr>
-				<a href="./">
-					<label class="menuLink">painel</label>
-				</a><br>
-				<a href="../bills">
-					<label class="menuLink">organizar contas</label>
-				</a><br>
-				<a href="../shopping">
-					<label class="menuLink">lista de compras</label>
-				</a><br>
-				<a href="../assignature">
-					<label class="menuLink">assinaturas</label>
-				</a><br>
-				<a href="../callendar">
-					<label class="menuLink">calendário</label>
-				</a><br>
-				<hr>
-				<i class="fa-brands fa-whatsapp socialIcon"></i>
-				<i class="fa-brands fa-instagram socialIcon"></i>
-			</div>
-		</div>
-	</div>
-</div>
 <script>
   const menuIcon = document.getElementById('openIcon');
   const menu = document.getElementById('menu');
