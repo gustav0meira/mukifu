@@ -1,0 +1,29 @@
+input.search{
+	background: #f1f1f1;
+	border-radius: 15px;
+	padding: 13px;
+	width: 100%;
+	border: none;
+	font-family: Poppins;
+	font-weight: 300;
+	padding-left: 20px;
+	font-size: 0.8rem !important;
+}
+
+button.plus{
+	border: none;
+	font-size: 0.8rem;
+	width: 100%;
+	border-radius: 25px;
+	color: #00000060;
+	padding: 13px;
+	text-align: center;
+	background: #f1f1f1;
+}
+
+.assignaturePP{
+	width: 100%;
+	padding-bottom: 110%;
+	background-size: cover !important;
+	background-position: center center !important;
+}

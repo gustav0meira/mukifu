@@ -1,0 +1,156 @@
+body{
+	overflow-x: hidden;
+}
+
+.align{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+h1.logo{
+	color: #FF7417;
+	font-size: 30px;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
+h1.logoWhite{
+	color: #FFF;
+	font-size: 30px;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
+.menuIcon{
+	color: white;
+	padding: 13px;
+	cursor: pointer;
+	border-radius: 16px;
+	background: #FF7417;
+}
+
+.content{
+	padding: 20px 30px 0px 30px;
+}
+
+h1.welcome{
+	margin-top: 30px;
+	color: rgba(0, 0, 0, 0.70);
+	font-size: 20px;
+	font-family: Poppins;
+	margin-bottom: 20px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+}
+
+.module{
+	border-radius: 25px;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	background: #FFF;
+	padding: 15px 20px 15px 20px;
+	margin-bottom: 15px;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+}
+
+.titleHeader{
+	color: #444;
+	font-size: 15px;
+	font-family: Poppins;
+	margin-bottom: 0px !important;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+}
+
+.linkHeader{
+	color: #444;
+	font-size: 7px;
+	text-decoration: none;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+}
+
+.copy .logo{
+	color: #00000020 !important;
+	font-size: 1.2rem;
+	font-weight: 400;
+	margin-top: 40px;
+}
+
+.copy{
+	color: #00000030 !important;
+	font-family: Poppins;
+	font-size: 0.6rem;
+	padding-bottom: 40px;
+}
+
+input[type=checkbox]{
+	font-size: 0.7rem !important;
+	border: none !important;
+}
+
+.listBills{
+	font-family: Poppins !important;
+	font-size: 0.8rem !important;
+	font-weight: 300 !important;
+	margin-top: 10px !important;
+}
+
+/* Oculta o checkbox padrão */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Estilo do checkbox personalizado */
+label.checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px; /* Espaçamento entre o checkbox e o texto */
+  cursor: pointer;
+}
+
+/* Estilo do checkbox personalizado quando não está marcado */
+label.checkbox::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px; /* Largura do checkbox */
+  height: 18px; /* Altura do checkbox */
+  border: none; /* Cor da borda do checkbox */
+  background-color: #f1f1f1; /* Cor de fundo do checkbox */
+  border-radius: 5px;
+}
+
+/* Estilo do checkbox personalizado quando marcado */
+label.checkbox::after {
+  content: "";
+  position: absolute;
+  left: 6px; /* Posição do "tick" dentro do checkbox */
+  top: 2px; /* Posição do "tick" dentro do checkbox */
+  width: 5px; /* Largura do "tick" */
+  height: 10px; /* Altura do "tick" */
+  border: solid white; /* Cor do "tick" */
+  border-width: 0 2px 2px 0; /* Espessura das linhas do "tick" */
+  transform: rotate(45deg); /* Rotação do "tick" */
+  display: none;
+}
+
+/* Estilo do checkbox personalizado quando marcado */
+input[type="checkbox"]:checked + label.checkbox::after {
+  display: block;
+}
+
+/* Cor de fundo do checkbox quando marcado */
+input[type="checkbox"]:checked + label.checkbox::before {
+  background-color: #06F; /* Cor de fundo do checkbox quando marcado */
+}
