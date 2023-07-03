@@ -89,23 +89,8 @@ div.menu .pp{
 				<i style="padding: 0px !important;" class="fa-solid fa-xmark menuIcon align"></i>
 			</div>
 		</div>
-		<div class="row">
+		<div style="margin-top: 70px;" class="row">
 			<div class="col-12">
-				<div class="social">
-					<div class="row">
-						<div class="col-4">
-							<div style="background: url('../assets/img/no-picture.png');" class="pp align"></div>
-						</div>
-						<div class="col-8">
-							<label class="align">@gustavo</label>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<hr>
 				<a href="../painel">
 					<label class="menuLink">painel</label>
 				</a><br>

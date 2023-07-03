@@ -30,18 +30,43 @@
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<h1 class="welcome">bom dia, Gustavo! ⛅</h1>
+				<h1 class="welcome">
+					<?php
+					date_default_timezone_set('America/Sao_Paulo'); // Define o fuso horário para São Paulo
+
+					$hora = date('H'); // Obtém a hora atual
+
+					if ($hora >= 6 && $hora < 12) {
+					    echo 'Bom dia! ⛅';
+					} elseif ($hora >= 12 && $hora < 18) {
+					    echo 'Boa tarde! 🌅';
+					} else {
+					    echo 'Boa noite! 🌙';
+					}
+					?>
+				</h1>
 			</div>
-			<div class="col-6">
+			<div style="margin-top: 5px;" class="col-12">
 				<div class="module">
-					<h1 class="titleHeader"></h1>
-					
-				</div>
-			</div>
-			<div class="col-6">
-				<div class="module">
-					<h1 class="titleHeader"></h1>
-					
+					<div class="row">
+						<div class="col-8">
+							<h1 class="titleHeader align">lista de compras 📝</h1>
+						</div>
+						<div style="text-align: right;" class="col-4">
+							<a href="../shopping"><label class="linkHeader align">(ver tudo)</label></a>
+						</div>
+					</div>
+					<?php
+					$consulta = "SELECT * FROM shopping ORDER BY id DESC LIMIT 15";
+					$con = $conn->query($consulta) or die($conn->error);
+					while($dado = $con->fetch_array()) { ?>
+					<div class="row listBills">
+						<div class="col-12">
+							<input id="checkbox<?php echo $dado['id'] ?>" class="align" type="checkbox" name="checkbox<?php echo $dado['id'] ?>">
+							<label for="checkbox<?php echo $dado['id'] ?>" class="checkbox align"><?php echo $dado['name'] ?></label>
+						</div>
+					</div>
+					<?php } ?>
 				</div>
 			</div>
 			<div class="col-12">
@@ -62,29 +87,6 @@
 						<div class="col-12">
 							<input id="checkboxBill<?php echo $dado['id'] ?>" class="align" type="checkbox" name="checkboxBill<?php echo $dado['id'] ?>">
 							<label for="checkboxBill<?php echo $dado['id'] ?>" class="checkbox align">R$ <?php echo number_format($dado['amount'], 2, ',', '.'); ?> - <?php echo $dado['name'] ?></label>
-						</div>
-					</div>
-					<?php } ?>
-				</div>
-			</div>
-			<div class="col-12">
-				<div class="module">
-					<div class="row">
-						<div class="col-8">
-							<h1 class="titleHeader align">lista de compras 📝</h1>
-						</div>
-						<div style="text-align: right;" class="col-4">
-							<a href="../shopping"><label class="linkHeader align">(ver tudo)</label></a>
-						</div>
-					</div>
-					<?php
-					$consulta = "SELECT * FROM shopping ORDER BY id DESC LIMIT 15";
-					$con = $conn->query($consulta) or die($conn->error);
-					while($dado = $con->fetch_array()) { ?>
-					<div class="row listBills">
-						<div class="col-12">
-							<input id="checkbox<?php echo $dado['id'] ?>" class="align" type="checkbox" name="checkbox<?php echo $dado['id'] ?>">
-							<label for="checkbox<?php echo $dado['id'] ?>" class="checkbox align"><?php echo $dado['name'] ?></label>
 						</div>
 					</div>
 					<?php } ?>
