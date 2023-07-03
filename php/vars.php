@@ -9,6 +9,8 @@
 
 ?>
 
+<link rel="icon" type="image/png" href="https://thecircle.com.br/mukifu/assets/favicon.png">
+
 <?php 
 
 	function nextMonth($month) {

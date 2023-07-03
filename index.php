@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
 	<meta name="theme-color" content="#FF7417">
 	<meta name="apple-mobile-web-app-status-bar-style" content="#FF7417">
+	<link rel="icon" type="image/png" href="https://thecircle.com.br/mukifu/assets/favicon.png">
 </head>
 <body>
 	<div class="contentAlign">
