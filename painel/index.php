@@ -62,7 +62,7 @@
 					while($dado = $con->fetch_array()) { ?>
 					<div class="row listBills">
 						<div class="col-12">
-							<input id="checkbox<?php echo $dado['id'] ?>" class="align" type="checkbox" name="checkbox<?php echo $dado['id'] ?>">
+							<input <?php if ($dado['status'] == 'comprado') {echo 'checked';} ?> id="checkbox<?php echo $dado['id'] ?>" class="align" type="checkbox" name="checkbox<?php echo $dado['id'] ?>" data-id="<?php echo $dado['id'] ?>" data-table="shopping">
 							<label for="checkbox<?php echo $dado['id'] ?>" class="checkbox align"><?php echo $dado['name'] ?></label>
 						</div>
 					</div>
@@ -85,7 +85,7 @@
 					while($dado = $con->fetch_array()) { ?>
 					<div class="row listBills">
 						<div class="col-12">
-							<input id="checkboxBill<?php echo $dado['id'] ?>" class="align" type="checkbox" name="checkboxBill<?php echo $dado['id'] ?>">
+							<input <?php if ($dado['status'] == 'comprado') {echo 'checked';} ?> id="checkboxBill<?php echo $dado['id'] ?>" class="align" type="checkbox" name="checkboxBill<?php echo $dado['id'] ?>" data-id="<?php echo $dado['id'] ?>" data-table="bills">
 							<label for="checkboxBill<?php echo $dado['id'] ?>" class="checkbox align">R$ <?php echo number_format($dado['amount'], 2, ',', '.'); ?> - <?php echo $dado['name'] ?></label>
 						</div>
 					</div>
@@ -110,6 +110,30 @@
   });
   menuIcon.addEventListener('click', function() {
     menu.classList.toggle('menuOpen');
+  });
+
+  // Função para enviar a requisição AJAX e atualizar o status
+  function updateStatus(id, table) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '../php/update-status.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // Atualizar o estado do checkbox ou realizar outras ações necessárias
+        console.log(xhr.responseText);
+      }
+    };
+    xhr.send('id=' + id + '&table=' + table);
+  }
+
+  // Adicionar evento de clique para os checkboxes
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('click', function() {
+      const id = this.getAttribute('data-id');
+      const table = this.getAttribute('data-table');
+      updateStatus(id, table);
+    });
   });
 </script>
 </body>
