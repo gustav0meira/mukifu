@@ -113,7 +113,7 @@
   });
 
   // Função para enviar a requisição AJAX e atualizar o status
-  function updateStatus(id, table) {
+  function updateStatus(id, table, status) {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '../php/update-status.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -123,7 +123,7 @@
         console.log(xhr.responseText);
       }
     };
-    xhr.send('id=' + id + '&table=' + table);
+    xhr.send('id=' + id + '&table=' + table + '&status=' + status);
   }
 
   // Adicionar evento de clique para os checkboxes
@@ -132,7 +132,8 @@
     checkbox.addEventListener('click', function() {
       const id = this.getAttribute('data-id');
       const table = this.getAttribute('data-table');
-      updateStatus(id, table);
+      const status = this.checked ? 'true' : 'false';
+      updateStatus(id, table, status);
     });
   });
 </script>

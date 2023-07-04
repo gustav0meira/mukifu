@@ -11,11 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id = $_POST['id'];
         $table = $_POST['table'];
 
+        // Verifica se a checkbox está marcada ou desmarcada
+        $status = ($_POST['status'] === 'true') ? 'comprado' : 'pendente';
+
         // Execute a lógica para atualizar o status na tabela especificada
         if ($table === 'shopping') {
-            $query = "UPDATE shopping SET status = 'comprado' WHERE id = $id";
+            $query = "UPDATE shopping SET status = '$status' WHERE id = $id";
         } elseif ($table === 'bills') {
-            $query = "UPDATE bills SET status = 'pago' WHERE id = $id";
+            $query = "UPDATE bills SET status = '$status' WHERE id = $id";
         }
 
         // Execute a query no banco de dados
